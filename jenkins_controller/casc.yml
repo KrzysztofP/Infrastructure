@@ -4,13 +4,24 @@ jenkins:
       users:
        - id: "panda"
          password: "panda"
-authorizationStrategy:
-  globalMatrix:
-    permissions:
-     - "Overall/Administer:panda"
-numExecutors: 0
-   permissions
-
+  authorizationStrategy:
+    globalMatrix:
+      permissions:
+       - "Overall/Administer:panda"
+  numExecutors: 0
+  nodes:
+  - permanent:
+      labelString: "agent"
+      launcher:
+        ssh:
+          credentialsId: "jenkins_agent"
+          host: "jenkins_agent"
+          port: 22
+          sshHostKeyVerificationStrategy: "nonVerifyingKeyVerificationStrategy"
+      name: "agent"
+      remoteFS: "/home/jenkins/agent"
+      retentionStrategy: "always"
+   
 tool:
   sonarRunnerInstallation:
     installations:
