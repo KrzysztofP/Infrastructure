@@ -34,10 +34,10 @@ tool:
 unclassified:
   sonarGlobalConfiguration:
     buildWrapperEnabled: true
-      installations:
-      - name: "SonarQube"
-        serverUrl: "http://192.168.44.44:9000"
-        triggers:
-          skipScmCause: false
-          skipUpstreamCause: false
+    installations:
+    - name: "SonarQube"
+      serverUrl: "http://192.168.44.44:9000"
+      triggers:
+        skipScmCause: false
+        skipUpstreamCause: false
 
